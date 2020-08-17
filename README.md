@@ -19,9 +19,8 @@ Make sure a user can keep the app running and monitor the log file continuously
 * type:: a header file, declares the structs HttpRequest that translates a single line parsed from the log file and Config that contains the define monitor configs
 
 #### Development 
-* C++14MainWindow
-* GCC ( I used GCC 8 just in case I need C++14 functionalities
- but earlier versions can be used too )
+* C++14
+* GCC 8  but earlier versions can be used too )
 * Cmake (3.16 is used in this project)
 * QT5 is used to display ui and to insure the design pattern observer used by signal/Slots communication
 
