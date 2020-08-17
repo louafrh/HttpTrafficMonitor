@@ -7,7 +7,7 @@ Make sure a user can keep the app running and monitor the log file continuously
 * Whenever the total traffic drops again below that value on average for the past 2 minutes, print or display another message detailing when the alert recovered
 
 
-####Design
+#### Design
 * ConfigParser :: a static class usinf to parse a file or CLI arguments and update the struct Config
 * LogParser :: a unique_ptr used by the class Monitor, reads the log file every 20 second (define refresh time) and builds a HttpRequest struct that will be added to the trafic Report
 * MainWindow:: The main App interface that displays the stats, alerts, timers and give access to the config ui, contains the config UI and a unique_ptr of the class Monitor that is rinning in a independant thread
@@ -18,17 +18,17 @@ Make sure a user can keep the app running and monitor the log file continuously
 * Utils :: a static class that contains the date/time and Application  log utilities
 * type:: a header file, declares the structs HttpRequest that translates a single line parsed from the log file and Config that contains the define monitor configs
 
-####Development 
+#### Development 
 * C++14MainWindow
 * GCC ( I used GCC 8 just in case I need C++17 functionalities
  but earlier versions can be used too )
 * Cmake (3.16 is used in this project)
 * QT5 is used to display ui and to insure the design pattern observer used by signal/Slots communication
 
-##Testing
+## Testing
 * Unit tests using Qtest framework by QT5
 
-##Possible improvements
+## Possible improvements
 * Reading and parsing file take time and cause a delay to deliver 
 the traffic statistics. watching the traffic directly without waiting
  for the access.log to be filled would generate a real time statistics.
